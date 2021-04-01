@@ -18,6 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function (Request $request) {
-    return $request;
-});
+Route::get('/authors', '\App\Http\Controllers\AuthorController@index');

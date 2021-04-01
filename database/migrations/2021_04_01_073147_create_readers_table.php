@@ -15,6 +15,11 @@ class CreateReadersTable extends Migration
     {
         Schema::create('readers', function (Blueprint $table) {
             $table->id();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('address');
+            $table->string('UCN');
+            $table->string('work');
             $table->timestamps();
         });
     }

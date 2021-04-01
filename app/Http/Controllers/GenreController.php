@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    //
+    public function index() {
+        return Genre::all();
+    }
 }
