@@ -13,6 +13,6 @@ class ReaderSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Reader::factory(10)->create();
     }
 }

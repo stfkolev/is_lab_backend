@@ -22,7 +22,11 @@ class ReaderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'firstName'     => $this->faker->firstName,
+            'lastName'      => $this->faker->lastName,
+            'address'       => $this->faker->streetName,
+            'UCN'           => $this->faker->numberBetween(1000000000, 9999999999),
+            'work'          => $this->faker->jobTitle,
         ];
     }
 }
