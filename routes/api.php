@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'authors'], function() {
     Route::get('/', '\App\Http\Controllers\AuthorController@index');
+    Route::get('/{id}', '\App\Http\Controllers\AuthorController@show');
 });
