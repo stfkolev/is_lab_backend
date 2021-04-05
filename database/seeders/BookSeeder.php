@@ -13,6 +13,11 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Book::factory(10)
+            ->for(\App\Models\Author::factory()->create())
+            ->has(\App\Models\Genre::factory()->count(1))
+            ->has(\App\Models\Publisher::factory()->count(1))
+            ->hasReaders(4)
+            ->create();
     }
 }
