@@ -15,10 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            AuthorSeeder::class,
-            GenreSeeder::class,
-            PublisherSeeder::class,
+            // AuthorSeeder::class,
+            // GenreSeeder::class,
+            // PublisherSeeder::class,
             ReaderSeeder::class,
+            BookSeeder::class,
         ]);
     }
 }

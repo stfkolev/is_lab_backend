@@ -23,6 +23,9 @@ class BookFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
+            'author_id' => \App\Models\Author::factory(),
+            'genre_id' => \App\Models\Genre::factory(),
+            'publisher_id' => \App\Models\Publisher::factory(),
         ];
     }
 }
