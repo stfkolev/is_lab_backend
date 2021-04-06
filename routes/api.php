@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use \App\Http\Controllers\AuthorController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,7 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'authors'], function() {
-    Route::get('/', '\App\Http\Controllers\AuthorController@index');
-    Route::get('/{id}', '\App\Http\Controllers\AuthorController@show');
-});
+Route::apiResources([
+    'authors' => AuthorController::class,
+]);
+
+// Route::group(['prefix' => 'authors'], function() {
+//     Route::get('/', '\App\Http\Controllers\AuthorController@index');
+//     Route::get('/{id}', '\App\Http\Controllers\AuthorController@show');
+// });
