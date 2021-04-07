@@ -33,7 +33,7 @@ class AuthorController extends Controller
         $author->lastName = $request->lastName;
 
         $author->save();
-
+        
         return new AuthorResource($author);
     }
 
