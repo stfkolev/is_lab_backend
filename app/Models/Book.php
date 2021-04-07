@@ -20,14 +20,14 @@ class Book extends Model
     }
 
     public function genre() {
-        return $this->hasOne(Genre::class);
+        return $this->belongsTo(Genre::class);
     }
 
     public function publisher() {
-        return $this->hasOne(Publisher::class);
+        return $this->belongsTo(Publisher::class);
     }
 
     public function readers() {
-        return $this->belongsToMany(Reader::class);
+        return $this->belongsToMany(Reader::class)->withTimestamps();
     }
 }

@@ -4,6 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\AuthorController;
+use \App\Http\Controllers\GenreController;
+use \App\Http\Controllers\PublisherController;
+use \App\Http\Controllers\ReaderController;
+use \App\Http\Controllers\BookController;
+use \App\Http\Controllers\BorrowedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +26,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'authors' => AuthorController::class,
+    'authors'           => AuthorController::class,
+    'genres'            => GenreController::class,
+    'publishers'        => PublisherController::class,
+    'readers'           => ReaderController::class,
+    'books'             => BookController::class,
+    'borrowed'          => BorrowedController::class,
 ]);
 
-// Route::group(['prefix' => 'authors'], function() {
-//     Route::get('/', '\App\Http\Controllers\AuthorController@index');
-//     Route::get('/{id}', '\App\Http\Controllers\AuthorController@show');
-// });
